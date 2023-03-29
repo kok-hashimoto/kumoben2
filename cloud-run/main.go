@@ -31,6 +31,7 @@ func main() {
 type responseSchema struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
+	City string `json:"city"`
 }
 
 func personHandler(c echo.Context) error {
@@ -43,10 +44,13 @@ func personHandler(c echo.Context) error {
 	switch id % 3 {
 	case 0:
 		resp.Name = "Alice"
+		resp.City = "Sapporo"
 	case 1:
 		resp.Name = "Bravo"
+		resp.City = "Tokyo"
 	default:
 		resp.Name = "Charlie"
+		resp.City = "Naha"
 	}
 	return c.JSON(http.StatusOK, resp)
 }

@@ -1,0 +1,46 @@
+swagger: '2.0'
+info:
+  title: sample API
+  description: sample API
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /v1:
+    get:
+      summary: sample API v1
+      operationId: v1
+      x-google-backend:
+        address: https://kumoben2-test1.uc.r.appspot.com
+        path_translation: CONSTANT_ADDRESS
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+  /v2:
+    get:
+      summary: sample API v2
+      operationId: v2
+      x-google-backend:
+        address: https://sample-run-wx4kg5t6ra-uc.a.run.app
+        path_translation: CONSTANT_ADDRESS
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+  /v3:
+    get:
+      summary: sample API v3
+      operationId: v3
+      x-google-backend:
+        address: https://sample-function-wx4kg5t6ra-uc.a.run.app
+        path_translation: CONSTANT_ADDRESS
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
